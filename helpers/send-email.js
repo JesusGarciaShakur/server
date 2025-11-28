@@ -14,7 +14,7 @@ const sendEmail = async ({ email, subject, text, html }) => {
     });
 
     const mailOptions = {
-      from: `SheyEvents <${process.env.NODEMAILER_EMAIL}>`,
+      from: `Groovix <${process.env.NODEMAILER_EMAIL}>`,
       to: email,
       subject,
       text,
