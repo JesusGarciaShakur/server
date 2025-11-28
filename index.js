@@ -11,7 +11,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173", // para tu desarrollo
-      "https://pipeline-jade.vercel.app", //ruta para frontend en produccion        
+      "https://groovix2.vercel.app", //ruta para frontend en produccion        
     ],
     credentials: true,
   })
