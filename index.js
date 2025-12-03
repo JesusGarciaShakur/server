@@ -6,17 +6,28 @@ require("dotenv").config();
 
 const app = express();
 
-// CORS obligatorio
-app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://groovix2.vercel.app",
-    "capacitor://localhost",
-    "http://localhost",
-    "https://localhost"     // <-- NECESARIO PARA ANDROID
-  ],
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: [
+      "http://localhost",
+      "https://localhost",
+      "http://localhost:5173",
+
+      // Capacitor / Ionic
+      "capacitor://localhost",
+      "ionic://localhost",
+
+      // Tu app web
+      "https://groovix2.vercel.app",
+
+      // Tu backend (necesario para permitir la respuesta)
+      "https://server-e7g2.onrender.com"
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+  })
+);
+
 
 
 
