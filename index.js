@@ -9,13 +9,15 @@ const app = express();
 // CORS obligatorio
 app.use(cors({
   origin: [
-    "http://localhost:5173",         // Desarrollo web
-    "https://groovix2.vercel.app",   // Producción web (Vercel)
-    "capacitor://localhost",         // App móvil Android/iOS
-    "http://localhost",              // WebView interno
+    "http://localhost:5173",
+    "https://groovix2.vercel.app",
+    "capacitor://localhost",
+    "http://localhost",
+    "https://localhost"     // <-- NECESARIO PARA ANDROID
   ],
   credentials: true,
 }));
+
 
 
 app.use(express.json());
