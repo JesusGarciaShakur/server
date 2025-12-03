@@ -7,15 +7,15 @@ require("dotenv").config();
 const app = express();
 
 // CORS obligatorio
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173", // para tu desarrollo
-      "https://groovix2.vercel.app", //ruta para frontend en produccion        
-    ],
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: [
+    "https://groovix-client.vercel.app",
+    "http://localhost:5173",
+    "capacitor://localhost",
+    "http://localhost",
+  ],
+  credentials: true
+}));
 
 app.use(express.json());
 app.use(cookieParser());
